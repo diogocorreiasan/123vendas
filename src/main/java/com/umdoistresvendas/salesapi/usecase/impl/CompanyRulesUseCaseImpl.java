@@ -28,6 +28,7 @@ public class CompanyRulesUseCaseImpl implements CompanyRulesUseCase {
 
     @Override
     public Order execute(final Order order) {
+        log.info("[CompanyRulesUseCaseImpl]");
         final var orderUpdated = joinItemsUseCase.execute(order);
         logOrder(orderUpdated);
         final var items = getList(orderUpdated);
